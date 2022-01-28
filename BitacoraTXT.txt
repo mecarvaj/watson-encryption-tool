@@ -1,0 +1,1 @@
+Texto para encriptar	-	12	-	CifradoVigenere	-	encriptar	-	31/07/2020

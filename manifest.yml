@@ -1,0 +1,6 @@
+---
+applications:
+- name: pivotsolutionscryptov2
+  memory: 256M
+  host: pivotsolutionscryptov2
+  domain: mybluemix.net

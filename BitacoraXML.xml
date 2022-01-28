@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml>
+   <registro accion="encriptar" fecha="31/07/2020" frase="Texto para encriptar" llave="12" tipo="CifradoVigenere"/>
+</xml>
+

@@ -32,7 +32,7 @@ public class ChatService {
 	private String urlDB;
 	private String userDB;
 	private String passwordDB;
-	private String apiKey="BVMxwUZpj6Iey6Z1T50lzBrWpVJYFt3JN7P2tgJSVAse";
+	private String apiKey="oyHynwifFUvR2QydiynlPMm5IVYXqmzgw5Wv1IWvZq+p8le2O/LoMRtKmZdyq4apZL9oSEj/pm8=";//=
 	private String assistantURL="https://api.us-south.assistant.watson.cloud.ibm.com/instances/00c04eb1-f486-40cd-b46f-5cb1fab2853d";
 	private static String workspaceId = "a7a72d5f-2309-4dca-91c1-ed32764735c9";
 	
@@ -133,8 +133,8 @@ public class ChatService {
 		if (assistantResponseText.contains("###"))
 			assistantResponseText = administraRespuestaBitacora(assistantResponseText);
 		
-		//Acá se encripta
-		else if (assistantResponseText.contains("¬¬"))
+		//AcÃ¡ se encripta
+		else if (assistantResponseText.contains("Â¬Â¬"))
 			assistantResponseText = administrarRespuesta(assistantResponseText);
 		
 		
@@ -145,11 +145,11 @@ public class ChatService {
 	}
 	
 	
-	//En este método se toma el resultado del mensaje y se transforma en un mensaje des/encriptado. 
+	//En este mÃ©todo se toma el resultado del mensaje y se transforma en un mensaje des/encriptado. 
 	private String administrarRespuesta(String assistantResponseText) throws Exception {
 		
-		// assistantResponse = >¬¬tarea programada encriptacion¬¬"no object"¬¬CifradoTelefonico¬¬Encriptar
-		Object[] argumentos = (Object[]) assistantResponseText.split("¬¬"); // [">","asda", "asdad"]
+		// assistantResponse = >Â¬Â¬tarea programada encriptacionÂ¬Â¬"no object"Â¬Â¬CifradoTelefonicoÂ¬Â¬Encriptar
+		Object[] argumentos = (Object[]) assistantResponseText.split("Â¬Â¬"); // [">","asda", "asdad"]
 		//argumentos = {"tarea programada encriptacion","no object", "CifradoTelefonico","Encriptar"};
 		Contexto contexto;
 		String frase = (String) argumentos[1];
@@ -161,7 +161,7 @@ public class ChatService {
 		contexto= new Contexto(tipo);
 		BitacoraContextoDecorador contextoBitacora = new BitacoraContextoDecorador(contexto);
 		if (sentimientos.contains("Anger")) {
-			resultadoEncriptado = "Se determinó la existencia de Anger"
+			resultadoEncriptado = "Se determinÃ³ la existencia de Anger"
 					+ " en el texto por encriptar, le recomendamos modificar el mensaje "
 					+ "con el fin de apegarse a las reglas de Netiquette";
 		}
